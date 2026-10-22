@@ -1,0 +1,47 @@
+/* Slidev 51 moves the closed Go To dialog above the viewport, but a long
+   result list can remain visible below it. The input is disabled when closed.
+   Hide the entire closed dialog while preserving normal Go To navigation. */
+#slidev-goto-dialog:has(#slidev-goto-input:disabled) {
+  display: none;
+}
+
+/* Keep paragraphs beneath headings as readable as the rest of the slide. */
+.slidev-layout h1 + p {
+  opacity: 1;
+}
+
+/* Diagram roles: teal for gathering context, amber for transforming features. */
+:root {
+  --diagram-ink: oklch(0.25 0.01 240);
+  --diagram-muted: oklch(0.48 0.01 240);
+  --diagram-surface: oklch(0.97 0.005 240);
+  --diagram-attention: oklch(0.44 0.09 185);
+  --diagram-attention-fill: oklch(0.94 0.025 185);
+  --diagram-mlp: oklch(0.48 0.10 75);
+  --diagram-mlp-fill: oklch(0.95 0.025 75);
+}
+.dark {
+  --diagram-ink: oklch(0.94 0.005 240);
+  --diagram-muted: oklch(0.72 0.01 240);
+  --diagram-surface: oklch(0.23 0.005 240);
+  --diagram-attention: oklch(0.80 0.10 185);
+  --diagram-attention-fill: oklch(0.27 0.035 185);
+  --diagram-mlp: oklch(0.83 0.11 75);
+  --diagram-mlp-fill: oklch(0.28 0.035 75);
+}
+.slidev-layout.decoder-block-slide h1 { margin-bottom: 12px; }
+.slidev-layout.decoder-block-slide > p { margin-bottom: 12px; font-size: 20px; }
+.slidev-layout.decoder-stack-slide > p { font-size: 21px; }
+.decoder-stack-slide .slidev-code { font-size: 18px !important; line-height: 1.5 !important; }
+
+/* Keep the neuron equation, diagram, and definitions together on one slide. */
+.slidev-layout.neuron-slide h1 { margin-bottom: 8px; }
+.neuron-slide .katex-display { margin: 12px 0; }
+.slidev-layout.neuron-slide li { font-size: 19px; line-height: 1.45; }
+.slidev-layout.neuron-slide > p { font-size: 19px; margin: 12px 0; }
+
+.slidev-layout.network-slide h1 { margin-bottom: 6px; }
+.network-overview { display: grid; grid-template-columns: minmax(0, 1fr) 285px; gap: 12px; align-items: center; }
+.network-overview .katex { font-size: 1.05em; }
+.slidev-layout.network-slide li { font-size: 18px; line-height: 1.4; }
+.slidev-layout.network-slide ul { margin-top: 8px; }

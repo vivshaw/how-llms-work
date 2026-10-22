@@ -1,0 +1,9 @@
+- someday, add coverage:
+  - positional embedding
+  - caching
+  - MoE
+- formatting:
+  - use smartquotes everywhere, i mixed n' matched :(
+- styles:
+  - use my "official" color scheme from dataviz docs?
+  - rename colors in theme to be more accurate
